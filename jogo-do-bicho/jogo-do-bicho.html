@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/234ff1f164.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="game">
+        <span id="historicoButton"><i class="fas fa-bars"></i></span>
+    <section id="gameInterface" class="show">
+        <span id="show-sorted-animal"></span>
+        <section id="animalsPanel"></section>
+        <span>Moedas Total</span>
+        <span id="totalCoins">1000</span>
+        <label for="coins">Moedas</label>
+        <input type="text" id="coins" name="coins" pattern="[0-9]+" />
+        <button id="betButton">Apostar</button>
+      </section>
+      <section id="menu" class="dontShow">
+          <section id="rules">
+              <span>Regras do Jogo</span>
+            <ul>
+                <li>Escolha um animal</li>
+                <li>Coloque a quantidade de moedas que quer apostar</li>
+                <li>Aperte em apostar</li>
+                <li>Se ganhar receba o 2x mais o que apostou</li>
+                <li>Mas se perder perde toda quantia da aposta</li>
+            </ul>
+          </section>
+          <section id="historicoList">
+             <ul id="historicoContent">
+          
+            </ul>
+            </section>
+      </section>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>
