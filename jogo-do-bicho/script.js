@@ -1,11 +1,17 @@
-const game = document.getElementById("game")
-const animals = document.getElementById("animalsPanel")
-const betButton = document.getElementById("betButton")
-const totalCoins = document.getElementById("totalCoins")
+const game = document.getElementById("game") /*puxa onde vai ficar o jogo*/
+const gameInterface = document.getElementById("gameInterface") /*puxa toda interface visivel do jogo*/
+const animals = document.getElementById("animalsPanel") /*puxa os paneis dos animais*/
+const betButton = document.getElementById("betButton") /*puxa o botão de apostas*/
+const totalCoinsWay = document.getElementById("totalCoins") /*puxa o display de total de moedas*/
+const historicoButton = document.getElementById("historicoButton") /*puxa o botão do historico e regras*/
+const historicoList = document.getElementById("historicoList") /*puxa o display do historico*/
 const historico = [];
-const column = 0;
-const line = 0;
-var coins = 1000;
+var column = 0;
+var line = 0;
+var coins = 0;
+var totalCoins = 1000;
+
+/*Mapa das tiles dos animais*/
 
 const map = [
     ["", "", "", "", ""],
@@ -15,6 +21,7 @@ const map = [
     ["", "", "", "", ""],
 ];
 
+/*Pega a informação da seleção do animal*/
 const animalSelect = (e) => {
     console.log(e.target);
     target = e.target
@@ -22,6 +29,7 @@ const animalSelect = (e) => {
     line = Number(target.getAttribute ("line"));   
 }
 
+/*ouve o botão de selecionar o animal*/
 animals.addEventListener("click", animalSelect);
 
 const handleBuildLine = (currentLine, line) =>{
@@ -69,13 +77,15 @@ const win = (randomColumn, randomLine, column, line) => {
     
     if((column == randomColumn) && (line == randomLine)){
         window.alert("aeee caraio")
-        coins = coins*2
-        totalCoins.innerText = Number(totalCoins + coins)
+        totalCoins = totalCoins + (coins * coins)
+        totalCoinsWay.innerText = totalCoins
+        console.log(totalCoins)
     }
     else{
         window.alert("Não foi dessa vez")
-        coins -= coins
-        totalCoins.innerText = Number(totalCoins - coins)
+        totalCoins = totalCoins - coins
+        totalCoinsWay.innerText = totalCoins
+        console.log(totalCoins)
     }
 }
 
@@ -85,3 +95,11 @@ const randomNumber = () => {
 
 randomNumber();
 
+const showHistorico = () => {
+    historicoList.classList.toggle("show")
+    historicoList.classList.toggle("dontShow")
+    gameInterface.classList.toggle("dontShow")
+    
+}
+
+historicoButton.addEventListener("click", showHistorico)
