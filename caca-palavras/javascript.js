@@ -26,15 +26,16 @@ let p1 = Math.floor(Math.random() * 20)
 let p2 = Math.floor(Math.random() * 20)
 let p3 = Math.floor(Math.random() * 20)
 let p4 = Math.floor(Math.random()*  20)
-
 let p5 = Math.floor(Math.random() * 20)
+
+
 let letter1 = palavrasUsadas[p1].split('');   // variáveis quebrando em strings e gerando aleatoriedade
 let letter2 = palavrasUsadas[p2].split('');   // variáveis quebrando em strings
 let letter3 = palavrasUsadas[p3].split('');   // variáveis quebrando em strings
-let letter4 = palavrasUsadas[p4].split('');
+let letter4 = palavrasUsadas[p4].split('');     // variáveis quebrando em strings
+let letter5 = palavrasUsadas[p5]. split('');    // variáveis quebrando em strings
 
-let letter5 = palavrasUsadas[p5]. split('');
-
+// CONDIÇÕES A SEREM SEGUIDAS COM WIDTH FIXO
 if (letter1.length <= 13) {   //condição de coluna
     letter1.push(letrasAleatorias[0])
 }
@@ -52,7 +53,6 @@ if(letter5.length <= 13){
 }
 
 // condição de letras + colunas + linhas a serem inseridas. 
-
 for (let index = 0; index <= 13; index++) {
     arrayPalavras[index] = []
     for (let coluna = 0; coluna <= 13; coluna++) {
@@ -92,3 +92,19 @@ function resultado() {
         }
     }
 }
+
+// TENTATIVA DE SELECIONAR COM EVENT CLICK
+
+/*function myFunction() {
+    selecionado.addEventListener(click,myFunction[onfocus]);
+  } */
+
+  /*function myFunction() {
+    document.getElementById("td").select();
+
+  } */
+
+  const chapters = document.querySelectorAll('table');
+  chapters.forEach((resultado) => {
+    chapter.addEventListener('toggle', resultado);
+  });

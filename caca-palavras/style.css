@@ -36,14 +36,14 @@ body {
     color: rgb(36, 7, 75);
     
 }
-div.interacao {
+div.reload {
     width: 100%;
     margin: 0 auto;
     text-align: center;
     padding-top: 1.0em;
 }
 
-div.interacao input[type="button"] {
+div.reload input[type="button"] {
     
     flex-direction: column;
     width: 20%;
@@ -62,7 +62,7 @@ div.interacao input[type="button"] {
    cursor: pointer;
 }
 
-div.interacao input[type="button"]:hover {
+div.reload input[type="button"]:hover {
     color: rgb(207, 34, 207);
     background-color: white;
 }
@@ -73,3 +73,14 @@ div.interacao input[type="button"]:hover {
     box-sizing: border-box;
 }
 
+td:hover {
+    background-color: aqua;
+    cursor: pointer;
+
+}
+
+.ganhou {
+    font-size: 64px;
+    width: 320px;
+    text-align: center;
+}
