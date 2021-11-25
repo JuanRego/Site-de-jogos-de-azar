@@ -9,8 +9,8 @@ body.appendChild(table)
 const palavrasUsadas = [
     "SUSTENTARRQWDFGHY", "CONFERIDORQWDFGHY", "ACONTECERRQWDFGHY", "COMPACTARRQWDFGHY", "INTIMIDARRQWDFGHY",
     "MONITORIRQWDFGHY", "LIBERTINARQWDFGHY", "COLONIZARRQWDFGHY", "ASTRONOMORQWDFGHY", "BINARISMORQWDFGHY",
-    "ESTAFANTERQWDFGHY", "DEGRADADORQWDFGHY", "INQUILINORQWDFGHY", "HIPOCRITRQWDFGHY", "IMPELIDOSRQWDFGHY",
-    "ARRAIGADASRQWDFGHY", "CONGRESSORQWDFGHY", "SOLITARIORQWDFGHY", "ETNOLOGIRQWDFGHY", "MUAMBEIRORWDFGHY",
+    "ESTAFANTERQWDFGHY", "DEGRADADORQWDFGHY", "INQUILINORQWDFGHY", "HIPOCRITARQWDFGH", "IMPELIDOSRQWDFGHY",
+    "ARRAIGADASRQWDFGHY", "CONGRESSORQWDFGHY", "SOLITARIORQWDFGHY", "ETNOLOGIARQWDFGH", "MUAMBEIRORWDFGHY",
 ]
 
 //array com letras aleatórias
@@ -104,15 +104,25 @@ function resultado() {
 
   } */
 
-  const chapters = document.querySelectorAll('table');
+  /*const chapters = document.querySelectorAll('table');
   chapters.forEach((resultado) => {
     chapter.addEventListener('toggle', resultado);
-  });
+  }); */
 
-  function startTimer(duration, display) {
-    let timer = duration,
-        minutes, seconds;
-    setInterval(function() {
+  /*var temporizador;
+
+function Start() {
+    temporizador = setInterval(meuRelogio, 1000);
+}
+
+function meuRelogio() {
+    let hora = new Date().toLocaleTimeString();
+    document.getElementById('rel').innerHTML = hora;
+} */
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
         minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -123,9 +133,9 @@ function resultado() {
         }
     }, 1000);
 }
-
-function iniciarTempo() {
-    let duration = 60 * 0.50; // Converter para segundos
-    display = document.querySelector('#timer'); // selecionando o timer
+window.onload = function () {
+    var duration = 60 * 2; // Converter para segundos
+        display = document.querySelector('#timer'); // selecionando o timer
     startTimer(duration, display); // iniciando o timer
 };
+

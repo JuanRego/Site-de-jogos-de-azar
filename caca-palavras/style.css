@@ -84,3 +84,26 @@ td:hover {
     width: 320px;
     text-align: center;
 }
+
+@media(min-width: 800px) {
+    #tabela {
+        font-size: 20px;
+        width: 700px;
+        margin: 0 auto;
+    }
+    div.interacao {
+        width: 700px;
+        margin: 0 auto;
+        padding-top: 0.5em;
+    }
+    div.interacao input[type="button"] {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 0.25em;
+    }
+    #palavras__procuradas {
+        font-size: 14px;
+        width: 50%;
+        margin: 0 auto;
+    }
+}
