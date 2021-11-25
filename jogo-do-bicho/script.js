@@ -44,10 +44,9 @@ const map = [
     ["", "", "", "", ""],
 ];
 
-
-
 /*Pega a informação da seleção do animal*/
 const animalSelect = (e) => {
+    console.log(e.target);
     target = e.target
     column = Number(target.getAttribute ("column"));
     line = Number(target.getAttribute ("line"));
@@ -104,7 +103,7 @@ betButton.addEventListener("click", betAction);
 const win = (randomColumn, randomLine, column, line) => {
     
     if((column == randomColumn) && (line == randomLine)){
-        
+       
         totalCoins = totalCoins + (coins * 2)
         totalCoinsWay.innerText = totalCoins
         winScreenShow()
@@ -130,6 +129,7 @@ const winScreenClose = () => {
 }
 
 const randomAnimal = (line, column) => {
+
     const value = animais[line][column]
     const div = document.createElement("li")
     div.innerText = value
@@ -149,6 +149,7 @@ const showHistorico = () => {
     gameInterface.classList.toggle("dontShow")
     
 }
+
 
 const enterBet = (e) => {
     const button = e.target        

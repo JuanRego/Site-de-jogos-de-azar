@@ -1,0 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+h1 {  
+    color: white;
+    font-family: 'Anton', sans-serif;
+    text-shadow: 0px 5px 0px black;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 10px;
+} 
+
+header {
+    margin: 0 auto;
+}
+
+body {
+    
+    margin: 0 auto;
+    background-color: rgb(54, 45, 129);
+}
+
+#table {   
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 0px 0px 10px 5px rgb(33 15 110);
+    width: 0%;
+    margin: 0 auto;
+    background-color: #FFF;
+    width: 300px;
+    height: 290px;
+    
+}
+
+#table tr td{
+    text-align: center;
+    color: rgb(36, 7, 75);
+    
+    
+}
+div.reload {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1.0em;  
+}
+
+div.reload input[type="button"] {
+    
+    flex-direction: column;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid transparent;
+    font-size: 12px;
+    margin: 5px auto;
+    color: white;
+    text-transform: uppercase;
+    background-color: #5a189a;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+   cursor: pointer;
+}
+
+div.interacao input[type="button"]:hover {
+    color: rgb(207, 34, 207);
+    background-color: white;    
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #631d9f;    
+    border-radius: 40px; 
+}
+
+main{
+    border-radius: 40px;    
+    background-image: url(/img/diagonal-purple-and-pink-pattern-4K-wallpaper\ \(2\).svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;    
+    height: 90vh;
+    max-width: 90%;
+    width: 100%;
+    margin: 40px auto;
+    box-shadow: 0px 0px 5px 4px;    
+}
+
+
+.lista1{
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 auto;
+}
+
+#timer{
+    border-radius: 10px;
+    font-size: 10px;
+    color:black;
+    width: 200px;
+    height: 50px;
+    border: 2px solid pink;
+    margin: 10px auto;
+} 
+.letraAleatorias{
+    cursor: pointer;
+}
+
+.letraAleatorias:hover{
+    background-color: blueviolet;
+}
+
+@media (min-width: 800px){
+
+    #table{      
+        height: 400px;
+        width: 560px;
+    }
+    main{
+    height: 111vh;
+    }
+    .reload{
+        margin: 20px auto;
+    }
+
+    h1{
+        margin: 30px;
+    }
+
+     #timer{
+        border-radius: 10px;
+        font-size: 10px;
+        color:black;
+        width: 200px;
+        height: 50px;
+        border: 2px solid pink;
+        margin: 10px auto;
+    } 
+}
+
+@media screen and (max-width: 361px){
+    main{
+        height: 111vh;
+    }
+}
+
+@media screen and (max-width: 375px){
+    main{
+        height: 111vh;
+    }
+}
