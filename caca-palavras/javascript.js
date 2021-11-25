@@ -123,7 +123,7 @@ function resultado() {
     }, 1000);
 }
 window.onload = function () {
-    let duration = 60 * 2; // Converter para segundos
-        display = document.querySelector('#timer'); // selecionando o timer
-    startTimer(duration, display); // iniciando o timer
+    let duration = 60 * 2; 
+        display = document.querySelector('#timer'); 
+    startTimer(duration, display); 
 };
