@@ -8,6 +8,10 @@ const historicoButton = document.getElementById("historicoButton") /*puxa o bot�
 const menu = document.getElementById("menu") /*puxa o display do menu*/
 const historicoContent = document.getElementById("historicoContent") /*puxa a lista onde vai imprimir os animais do historico*/
 const showSortedAnimal = document.getElementById("show-sorted-animal") /*puxa o placar onde mostra o animal sorteado*/
+const winScreenHolder = document.getElementById("winScreenHolder") /*puxa o holder da tela de vitoria*/
+const winScreen = document.getElementById("winScreen") /*puxa a tela de vitoria*/
+const coinsInput = document.getElementById("coins")
+const body = document.getElementsByTagName("body")[0]
 const historico = [];
 const animais =[
  ["Avestruz", "Águia", "Burro", "Borboleta", "Cachorro"]
@@ -84,12 +88,6 @@ function betAction(e) {
     const randomLine = randomNumber()
     randomAnimal(randomLine, randomColumn)
 
-    console.log(e.target)
-    console.log(historico)
-    console.log(randomColumn)
-    console.log(randomLine)
-    console.log(coins)
-    console.log(animal)
     if (coins > totalCoins){
         alert("Você não tem moedas o suficientes")
     }
@@ -105,22 +103,33 @@ betButton.addEventListener("click", betAction);
 const win = (randomColumn, randomLine, column, line) => {
     
     if((column == randomColumn) && (line == randomLine)){
-        window.alert("aeee caraio")
+       
         totalCoins = totalCoins + (coins * 2)
         totalCoinsWay.innerText = totalCoins
-        console.log(totalCoins)
-    }
-    else{
-        window.alert("Não foi dessa vez")
+        winScreenShow()
+
+    }else{
         totalCoins = totalCoins - coins
         totalCoinsWay.innerText = totalCoins
-        console.log(totalCoins)
+        
+    }
+}
+
+const winScreenShow = () => {
+        winScreen.classList.toggle("dontShow")
+        winScreen.classList.toggle("show")
+        winScreenHolder.classList.toggle("dontShow")
+        winScreenHolder.classList.toggle("show")
+}
+
+const winScreenClose = () => {
+    if(winScreen.classList.contains("show")){
+        winScreen.classList.toggle("show")
     }
 }
 
 const randomAnimal = (line, column) => {
-    console.log(line)
-    console.log(column)
+
     const value = animais[line][column]
     const div = document.createElement("li")
     div.innerText = value
@@ -141,4 +150,13 @@ const showHistorico = () => {
     
 }
 
+
+const enterBet = (e) => {
+    const button = e.target        
+        if (e.keyCode === 13){
+            betAction();
+        }
+}
+
+coinsInput.addEventListener('keydown', enterBet)
 historicoButton.addEventListener("click", showHistorico)
