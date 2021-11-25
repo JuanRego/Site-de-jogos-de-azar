@@ -20,7 +20,7 @@ const animais =[
 , ["Leão", "Macaco", "Porco", "Pavão", "Peru"]
 , ["Touro", "Tigre", "Urso", "Veado", "Vaca"]
 ]
-
+ 
 const animalsvg = [
     ["./img/avestruz.svg", "./img/aguia.svg", "./img/burro.svg", "./img/borboleta.svg", "./img/cachorro.svg"], 
     ["./img/cabra.svg", "./img/carneiro.svg", "./img/camelo.svg", "./img/cobra.svg", "./img/coelho.svg"], 

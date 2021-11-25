@@ -11,3 +11,4 @@ const callingPalavra = () =>{
     window.location = './caca-palavras/index.html'
 }
 callPalavra.addEventListener('click', callingPalavra)
+ 
