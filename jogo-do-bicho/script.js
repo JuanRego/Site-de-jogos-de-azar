@@ -17,8 +17,12 @@ const animais =[
 , ["Touro", "Tigre", "Urso", "Veado", "Vaca"]
 ]
 
-const animalssvg = [
-    ["./jogo-do-bicho/img/aguia", ""]
+const animalsvg = [
+    ["./img/avestruz.svg", "./img/aguia.svg", "./img/burro.svg", "./img/borboleta.svg", "./img/cachorro.svg"], 
+    ["./img/cabra.svg", "./img/carneiro.svg", "./img/camelo.svg", "./img/cobra.svg", "./img/coelho.svg"], 
+    ["./img/cavalo.svg", "./img/elefante.svg", "./img/galo.svg", "./img/gato.svg", "./img/jacare.svg"], 
+    ["./img/leao.svg", "./img/macaco.svg", "./img/porco.svg", "./img/pavao.svg", "./img/peru.svg"],
+    ["./img/touro.svg", "./img/tigre.svg", "./img/urso.svg", "./img/veado.svg", "./img/vaca.svg"]
 ]
 
 var column = 0;
@@ -52,6 +56,8 @@ const handleBuildLine = (currentLine, line) =>{
     for(let column = 0; column < currentLine.length; column++){
         const currentValue = currentLine[column]
         const div = document.createElement("div")
+        const img = document.createElement("img")
+        img.src = animalsvg[line][column];
 
         div.setAttribute("column", column)
         div.setAttribute("line", line)
@@ -59,6 +65,7 @@ const handleBuildLine = (currentLine, line) =>{
         div.innerText = currentValue
 
         animals.appendChild(div);
+        div.appendChild(img)
     }
 };
 
@@ -99,7 +106,7 @@ const win = (randomColumn, randomLine, column, line) => {
     
     if((column == randomColumn) && (line == randomLine)){
         window.alert("aeee caraio")
-        totalCoins = totalCoins + (coins * coins)
+        totalCoins = totalCoins + (coins * 2)
         totalCoinsWay.innerText = totalCoins
         console.log(totalCoins)
     }
@@ -118,7 +125,7 @@ const randomAnimal = (line, column) => {
     const div = document.createElement("li")
     div.innerText = value
     historicoContent.appendChild(div)
-    
+    showSortedAnimal.innerText = value
 }
 
 const randomNumber = () => {
