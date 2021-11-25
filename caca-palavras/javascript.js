@@ -7,15 +7,17 @@ body.appendChild(table)
 // array com palavras a serem achadas
 
 const palavrasUsadas = [
-    "SUSTENTAR", "CONFERIDO", "ACONTECER", "COMPACTAR", "INTIMIDAR",
-    "MONITORIA", "LIBERTINA", "COLONIZAR", "ASTRONOMO", "BINARISMO",
-    "ESTAFANTE", "DEGRADADO", "INQUILINO", "HIPÓCRITA", "IMPELIDOS",
-    "ARRAIGADAS", "CONGRESSO", "SOLITARIO", "ETNOLOGIA", "MUAMBEIRO",
+    "SUSTENTARA", "CONFERIDOA", "ACONTECERA", "COMPACTARA", "INTIMIDARAb",
+    "MONITORIAA", "LIBERTINAA", "COLONIZARA", "ASTRONOMOA", "BINARISMOA",
+    "ESTAFANTEA", "DEGRADADOA", "INQUILINOA", "HIPOCRITAA", "IMPELIDOSA",
+    "ARRAIGADASA", "CONGRESSOA", "SOLITARIOA", "ETNOLOGIAA", "MUAMBEIROA",
 ]
 
 //array com letras aleatórias
 
 const letrasAleatorias = [
+    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
     "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
 ]
 let arrayPalavras = []  
@@ -25,32 +27,40 @@ let arrayPalavras = []
 let p1 = Math.floor(Math.random() * 19)
 let p2 = Math.floor(Math.random() * 10)
 let p3 = Math.floor(Math.random() * 7)
+let p4 = Math.floor(Math.random()*  6)
 let letter1 = palavrasUsadas[p1].split('');   // variáveis quebrando em strings e gerando aleatoriedade
 let letter2 = palavrasUsadas[p2].split('');   // variáveis quebrando em strings
 let letter3 = palavrasUsadas[p3].split('');   // variáveis quebrando em strings
+let letter4 = palavrasUsadas[p4].split('');
 
-if (letter1.length < 10) {
-    letter1.push(letrasAleatorias[2])
+if (letter1.length < 12) {   //condição de coluna
+    letter1.push(letrasAleatorias[1])
 }
-if (letter2.length < 10) {
+if (letter2.length < 12) {   //condição de coluna
     letter2.push(letrasAleatorias[0])
 }
-if (letter3.length < 10) {
+if (letter3.length < 12) {  //condição de coluna
     letter3.push(letrasAleatorias[7])
 }
+if (letter4.length < 12){   //condição de coluna
+    letter4.push(letrasAleatorias[10])
+}
 
+// condição de letras + colunas + linhas a serem inseridas. 
 
-for (let index = 0; index < 10; index++) {
+for (let index = 0; index < 11; index++) {
     arrayPalavras[index] = []
-    for (let coluna = 0; coluna < 10; coluna++) {
+    for (let coluna = 0; coluna < 11; coluna++) {
         arrayPalavras[index][coluna] = letrasAleatorias[coluna];
-        if (index === 1) {
-            arrayPalavras[index][coluna] = letter1[coluna]
+        if (index === 0) {
+            arrayPalavras[index][coluna] = letter1[coluna] //Numero da coluna a ter a palavra
         } else if (index === 3) {
-            arrayPalavras[index][coluna] = letter2[coluna]
+            arrayPalavras[index][coluna] = letter2[coluna]//Numero da coluna a ter a palavra
         } else if (index === 7) {
-            arrayPalavras[index][coluna] = letter3[coluna]
-        } else {
+            arrayPalavras[index][coluna] = letter3[coluna]//Numero da coluna a ter a palavra
+        } else if (index === 10){
+            arrayPalavras[index][coluna] = letter4[coluna]//Numero da coluna a ter a palavra
+        }   else {
             arrayPalavras[index][coluna] = letrasAleatorias[coluna + index];
         }
 
