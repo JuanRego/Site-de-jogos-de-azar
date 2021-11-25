@@ -5,44 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/234ff1f164.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <section id="game">
-        <section id="winScreenHolder" class="dontShow">
-            <span id="winScreen" class="dontShow">VOCÊ GANHOU!</span>
-        </section>
-        <span id="historicoButton"><i class="fas fa-bars"></i></span>
-        <section id="gameInterface" class="show">
-        <span id="show-sorted-animal"></span>
-            <section id="animalsPanel"></section>
-        <span>Moedas Total</span>
-        <span id="totalCoins">1000</span>
-        <label for="coins">Moedas</label>
-        <input type="text" id="coins" name="coins" pattern="[0-9]+" />
-        <button id="betButton">Apostar</button>
-      </section>
-      <section id="menu" class="dontShow">
-          <section id="rules">
-              <span>Regras do Jogo</span>
-            <ul>
-                <li>Escolha um animal</li>
-                <li>Coloque a quantidade de moedas que quer apostar</li>
-                <li>Aperte em apostar</li>
-                <li>Se ganhar receba o 2x mais o que apostou</li>
-                <li>Mas se perder perde toda quantia da aposta</li>
-            </ul>
-          </section>
-          <section id="historicoList">
-              <span>Resultados Anteriores</span>
-             <ul id="historicoContent">
-          
-            </ul>
+    <main>
+        <section id="game">
+            <section id="winScreenHolder" class="dontShow">
+                <span id="winScreen" class="dontShow">VOCÊ GANHOU!</span>
             </section>
+            <span id="historicoButton"><i class="fas fa-bars menuHamburguer"></i></span>
+        <section id="gameInterface" class="show">
+            <span id="show-sorted-animal"></span>
+            <section id="animalsPanel"></section>
+            <section id="sideMenu">
+                <section id="coins-holder">
+            <span>Moedas Total</span>
+            <span id="totalCoins">1000</span>
+        </section>
+        <section id="betHolder">
+            <span>Aposta</span>
+            <label for="coins">Moedas</label>
+            <input type="text" id="coins" name="coins" pattern="[0-9]+" />
+        </section>
+            <button id="betButton">Apostar</button>
+        </section>
+        </section>
+        <section id="menu" class="dontShow">
+            <section id="rules">
+                <span class="titleRules">Regras do Jogo</span>
+                <ul>
+                    <li>Escolha um animal</li>
+                    <li>Coloque a quantidade de moedas que quer apostar</li>
+                    <li>Aperte em apostar</li>
+                    <li>Se ganhar receba o 2x mais o que apostou</li>
+                    <li>Mas se perder perde toda quantia da aposta</li>
+                </ul>
+            </section>
+            <section id="historicoList">
+                <span>Historico</span>
+                <ul id="historicoContent">
             
-      </section>
-    </section>
+                </ul>
+                </section>
+        </section>
+        </section>
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>

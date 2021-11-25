@@ -48,7 +48,6 @@ const map = [
 
 /*Pega a informação da seleção do animal*/
 const animalSelect = (e) => {
-    console.log(e.target);
     target = e.target
     column = Number(target.getAttribute ("column"));
     line = Number(target.getAttribute ("line"));
@@ -90,12 +89,6 @@ function betAction(e) {
     const randomLine = randomNumber()
     randomAnimal(randomLine, randomColumn)
 
-    console.log(e.target)
-    console.log(historico)
-    console.log(randomColumn)
-    console.log(randomLine)
-    console.log(coins)
-    console.log(animal)
     if (coins > totalCoins){
         alert("Você não tem moedas o suficientes")
     }
@@ -114,19 +107,12 @@ const win = (randomColumn, randomLine, column, line) => {
         
         totalCoins = totalCoins + (coins * 2)
         totalCoinsWay.innerText = totalCoins
-        console.log(totalCoins)
         winScreenShow()
-    }
-    if(coins = 420){
-        
-        totalCoins = totalCoins + (coins * 2)
-        totalCoinsWay.innerText = totalCoins
-        console.log(totalCoins)
-        winScreenShow()
+
     }else{
         totalCoins = totalCoins - coins
         totalCoinsWay.innerText = totalCoins
-        console.log(totalCoins)
+        
     }
 }
 
@@ -144,8 +130,6 @@ const winScreenClose = () => {
 }
 
 const randomAnimal = (line, column) => {
-    console.log(line)
-    console.log(column)
     const value = animais[line][column]
     const div = document.createElement("li")
     div.innerText = value
