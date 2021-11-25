@@ -11,5 +11,4 @@ callBicho.addEventListener('click', callingBicho)
 const callingPalavra = () =>{
     window.location = './caca-palavra/caca-palavra.html'
 }
-
 callPalavra.addEventListener('click', callingPalavra)
