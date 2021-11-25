@@ -197,7 +197,7 @@ body{
 
 main{
     border-radius: 40px;    
-    background-image: url(./imgFundo/fundo.svg);
+    background-image: url(/index/imgFundo/fundo.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;    
