@@ -1,23 +1,24 @@
+const main = document.querySelector("main")
 const body = document.querySelector("body")
 const table = document.getElementById("table")
 table.className = "tabela"
 let posicao = document.querySelector("td")
-body.appendChild(table)
+main.appendChild(table)
 
-// array com palavras a serem achadas = 9 LETRAS CADA PALAVRA
+// array com palavras a serem achadas
 
 const palavrasUsadas = [
     "SUSTENTARRQWDFGHY", "CONFERIDORQWDFGHY", "ACONTECERRQWDFGHY", "COMPACTARRQWDFGHY", "INTIMIDARRQWDFGHY",
     "MONITORIRQWDFGHY", "LIBERTINARQWDFGHY", "COLONIZARRQWDFGHY", "ASTRONOMORQWDFGHY", "BINARISMORQWDFGHY",
-    "ESTAFANTERQWDFGHY", "DEGRADADORQWDFGHY", "INQUILINORQWDFGHY", "HIPOCRITARQWDFGH", "IMPELIDOSRQWDFGHY",
-    "ARRAIGADASRQWDFGHY", "CONGRESSORQWDFGHY", "SOLITARIORQWDFGHY", "ETNOLOGIARQWDFGH", "MUAMBEIRORWDFGHY",
+    "ESTAFANTERQWDFGHY", "DEGRADADORQWDFGHY", "INQUILINORQWDFGHY", "HIPOCRITRQWDFGHY", "IMPELIDOSRQWDFGHY",
+    "ARRAIGADASRQWDFGHY", "CONGRESSORQWDFGHY", "SOLITARIORQWDFGHY", "ETNOLOGIRQWDFGHY", "MUAMBEIRORWDFGHY",
 ]
 
 //array com letras aleatórias
 
 const letrasAleatorias = [
-    "A",  "C", "E", "G", "I", "K", "M", "O", "Q", "S", "U", "W", "Y",'B', 'D', 'F', 'H', 'J', 'L', 'N', 'P', 'R', 'T', 'V', 'X', 'Z'
-    ]
+    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+]
 let arrayPalavras = []  
     
 // gerando aleatoriedade
@@ -27,7 +28,6 @@ let p2 = Math.floor(Math.random() * 20)
 let p3 = Math.floor(Math.random() * 20)
 let p4 = Math.floor(Math.random()*  20)
 let p5 = Math.floor(Math.random() * 20)
-
 
 let letter1 = palavrasUsadas[p1].split('');   // variáveis quebrando em strings e gerando aleatoriedade
 let letter2 = palavrasUsadas[p2].split('');   // variáveis quebrando em strings
@@ -104,24 +104,13 @@ function resultado() {
 
   } */
 
-  /*const chapters = document.querySelectorAll('table');
+  /* const chapters = document.querySelectorAll('table');
   chapters.forEach((resultado) => {
     chapter.addEventListener('toggle', resultado);
-  }); */
-
-  /*var temporizador;
-
-function Start() {
-    temporizador = setInterval(meuRelogio, 1000);
-}
-
-function meuRelogio() {
-    let hora = new Date().toLocaleTimeString();
-    document.getElementById('rel').innerHTML = hora;
-} */
-
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+  });
+*/
+  function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -134,8 +123,7 @@ function startTimer(duration, display) {
     }, 1000);
 }
 window.onload = function () {
-    var duration = 60 * 2; // Converter para segundos
+    let duration = 60 * 2; // Converter para segundos
         display = document.querySelector('#timer'); // selecionando o timer
     startTimer(duration, display); // iniciando o timer
 };
-
